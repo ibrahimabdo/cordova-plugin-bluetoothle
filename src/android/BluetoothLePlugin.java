@@ -3037,6 +3037,7 @@ public class BluetoothLePlugin extends CordovaPlugin {
           addProperty(returnObj, keyRssi, result.getRssi());
           addPropertyBytes(returnObj, keyAdvertisement, result.getScanRecord().getBytes());
           addProperty(returnObj, keyStatus, statusScanResult);
+          addProperty(returnObj, "device_class", result.getDevice().getBluetoothClass().getDeviceClass());
 
           PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, returnObj);
           pluginResult.setKeepCallback(true);
